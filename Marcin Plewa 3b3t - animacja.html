@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animacja</title>
+</head>
+<body>
+    <canvas id="n1">
+        "Brak obsługi canvasa"
+    </canvas>
+    <script>
+        var canvas = document.getElementById("n1");
+        var ctx = canvas.getContext("2d");
+        var cWidth = canvas.width;
+        var cHeight = canvas.height;
+        var image = new Image();
+        image.src = "obraz.jpg";
+
+        var iWidth = image.width;
+        var iHeight = image.height;
+        var interval = null;
+        var frame = 0;
+        var fWidth = ;
+        var fHeight = ;
+
+        function drawFrame()
+        {
+
+        }
+
+        function startAnimation()
+        {
+
+        }
+
+//rysowanie klatki co 100ms
+        if (interval == null)
+        {
+            interval = window.setInterval(drawFrame,100)
+            console.log("Ready");
+        }
+
+        if (image.complete)
+        {
+            console.log("Image ready");
+            startAnimation();
+        }
+        else
+        {
+            console.log("Image not ready");
+            image.addEventListener('load', startAnimation);
+        }
+    </script>
+</body>
+</html>
