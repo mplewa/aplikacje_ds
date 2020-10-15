@@ -1,0 +1,101 @@
+<html>
+    <head>
+            <style>
+                #c1{
+                    background-color: yellow;
+                    width: 600px;
+                    height: 300px;
+                }
+                body{
+                    background-color: grey;
+                }
+            </style>
+    </head>
+
+    <body>
+        <canvas id="c1"></canvas>
+
+        <script>
+            var canvas=document.getElementById("c1");
+            var ctx=canvas.getContext("2d");
+            var sizex=canvas.width;
+            var sizey=canvas.height;
+
+        function polish(){
+            ctx.fillStyle="white"
+            ctx.fillRect(0,0,sizex,sizey/2);
+            ctx.fillStyle="red"
+            ctx.fillRect(0,sizey/2,sizex,sizey);
+        }
+
+        function japanese(){
+            ctx.fillStyle = "white";
+            ctx.fillRect(0,0,sizex,sizey);
+            ctx.beginPath();
+            ctx.fillStyle = "red";
+            ctx.arc(sizex/2,sizey/2,50,0,2*Math.PI);
+            ctx.fill();
+        }
+
+        function finnish(){
+            ctx.fillStyle = "white";
+            ctx.fillRect(0,0,sizex,sizey);
+            ctx.fillStyle = "navy";
+            ctx.fillRect(0,60,sizex,sizey/4); //flaga horyzontalna
+            ctx.fillRect(75,0,sizex/7,sizey); //flaga wertykalna
+        }
+        
+        function swedish(){
+            ctx.fillStyle = "darkblue";
+            ctx.fillRect(0,0,sizex,sizey);
+            ctx.fillStyle = "yellow";
+            ctx.fillRect(0,60,sizex,sizey/4); //flaga horyzontalna
+            ctx.fillRect(75,0,sizex/7,sizey); //flaga wertykalna
+        }
+        
+        function norwegian(){
+            ctx.fillStyle = "red";
+            ctx.fillRect(0,0,sizex,sizey);
+            ctx.fillStyle = "white";
+            ctx.fillRect(0,60,sizex,sizey/4); //flaga horyzontalna 1
+            ctx.fillRect(75,0,sizex/7,sizey); //flaga wertykalna 2
+            ctx.fillStyle = "darkblue";
+            ctx.fillRect(0,66,sizex,sizey/6); //flaga horyzontalna
+            ctx.fillRect(81,0,sizex/10,sizey); //flaga wertykalna
+        }
+
+        function icelandic(){
+            ctx.fillStyle = "darkblue";
+            ctx.fillRect(0,0,sizex,sizey);
+            ctx.fillStyle = "white";
+            ctx.fillRect(0,60,sizex,sizey/4); //flaga horyzontalna 1
+            ctx.fillRect(75,0,sizex/7,sizey); //flaga wertykalna 2
+            ctx.fillStyle = "red";
+            ctx.fillRect(0,66,sizex,sizey/6); //flaga horyzontalna
+            ctx.fillRect(81,0,sizex/10,sizey); //flaga wertykalna
+        }
+
+        function czech(){
+            ctx.beginPath();
+            ctx.fillStyle ="white";
+            ctx.fillRect(0,0,sizex,sizey);
+            ctx.fillStyle = "red";
+            ctx.fillRect(0,sizey/2,sizex,sizey);
+            ctx.fillStyle ="darkblue"
+            ctx.moveTo(0,0);
+            ctx.lineTo(120,sizey/2);
+            ctx.lineTo(0,sizey);
+            ctx.fill();
+        }
+        </script>
+        <p1><br><br>
+            <button type="button" onclick="polish()">POLAND</button><br><br>
+            <button type="button" onclick="japanese()">JAPAN</button><br><br>
+            <button type="button" onclick="finnish()">FINLAND</button><br><br>
+            <button type="button" onclick="swedish()">SWEDEN</button><br><br>
+            <button type="button" onclick="norwegian()">NORWAY</button><br><br>
+            <button type="button" onclick="icelandic()">ICELAND</button><br><br>
+            <button type="button" onclick="czech()">CZECH REPUBLIC</button><br><br>
+    </p1>
+    </body>
+</html>
